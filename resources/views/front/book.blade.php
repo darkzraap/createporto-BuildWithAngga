@@ -22,7 +22,9 @@
                 <h1 class="font-extrabold text-[50px] leading-[75px]">Book a Meeting</h1>
                 <p class="text-lg">Tell me anything about your biggest future dreams</p>
             </div>
-            <form action="" class="flex flex-col gap-5 w-[550px]">
+            <form action="{{route('front.book.store')}}" method = "POST" enctype="multipart/form-data" class="flex flex-col gap-5 w-[550px]">
+                @csrf
+
                 <label class="flex flex-col gap-[10px] font-semibold">
                     <span class="text-white">Complete Name</span>
                     <input type="text" name="name" id="name" class="bg-white rounded-full p-[14px_30px] appearance-none outline-none focus:ring-[3px] focus:ring-portto-green placeholder:font-normal placeholder:text-base placeholder:text-[#878C9C]" placeholder="Write your complete name" required>
@@ -36,21 +38,21 @@
                         <span class="text-white">Category</span>
                         <select name="category" id="category" class="font-semibold bg-white rounded-full p-[14px_30px] pr-[54px] appearance-none outline-none focus:ring-[3px] focus:ring-portto-green invalid:text-[#878C9C] invalid:font-normal bg-[url({{asset('/images/icons/arrow-down.svg')}})] bg-no-repeat bg-[91%]" required>
                             <option value="" class="text-[#878C9C]" selected disabled hidden>Select category</option>
-                            <option value="" >Website Development</option>
-                            <option value="" >System Analyst</option>
-                             <option value="" >AI Enggineer</option>
+                            <option value="Website Development" >Website Development</option>
+                            <option value="UI UX Designer" >UI UX Designer</option>
+                         
                         </select>
                     </label>
                     <label class="flex flex-col gap-[10px] font-semibold w-full">
                         <span class="text-white">Est. Budget (Rp)</span>
-                        <input type="number" name="budget" id="email" class="bg-white rounded-full p-[14px_30px] appearance-none outline-none focus:ring-[3px] focus:ring-portto-green placeholder:font-normal placeholder:text-base placeholder:text-[#878C9C]" placeholder="Tell me your budget" required>
+                        <input type="number" name="budget" id="budget" class="bg-white rounded-full p-[14px_30px] appearance-none outline-none focus:ring-[3px] focus:ring-portto-green placeholder:font-normal placeholder:text-base placeholder:text-[#878C9C]" placeholder="Tell me your budget" required>
                     </label>
                 </div>
                 <label class="flex flex-col gap-[10px] font-semibold">
                     <span class="text-white">Project Brief</span>
                     <textarea name="brief" id="brief" class="rounded-[20px] p-[14px_30px] appearance-none outline-none focus:ring-[3px] focus:ring-portto-green placeholder:font-normal placeholder:text-base placeholder:text-[#878C9C] h-[250px]" placeholder="Brief me your a whole project" required></textarea>
                 </label>
-                <button class="font-bold text-lg text-white bg-portto-purple rounded-[20px] p-5 transition-all duration-300 hover:shadow-[0_10px_20px_0_#4920E5]">Request for Meeting</button>
+                <button type ='submit' class="font-bold text-lg text-white bg-portto-purple rounded-[20px] p-5 transition-all duration-300 hover:shadow-[0_10px_20px_0_#4920E5]">Request for Meeting</button>
             </form>
         </div>
     </section>

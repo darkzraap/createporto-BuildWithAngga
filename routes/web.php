@@ -24,8 +24,7 @@ Route::get('/', [FrontController::class, 'index'])->name('front.index');
 Route::get('/details/{project:slug}', [FrontController::class, 'details'])->name('front.details');
 Route::get('/book', [FrontController::class, 'book'])->name('front.book');
 
-
-
+Route::post('/book/save', [FrontController::class, 'store'])->name('front.book.store');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -40,8 +39,11 @@ Route::middleware('auth')->group(function () {
     Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('projects', ProjectController::class);
     Route::resource('tools', ToolController::class);
-    Route::resource('orders', ProjectOrderController::class);
+
     Route::resource('project_tools', ProjectToolController::class);
+
+     Route::get('/orders', [ProjectOrderController::class, 'index'])->name('orders.index');
+    Route::delete('/orders/delete/{projectOrder}', [ProjectOrderController::class, 'destroy'])->name('orders.destroy');
 
     Route::get('/tools/assign/{project}', [ProjectToolController::class, 'create'])->name('project.assign.tool');
     Route::post('/tools/assign/save/{project}', [ProjectToolController::class, 'store'])->name('project.assign.tool.store');
