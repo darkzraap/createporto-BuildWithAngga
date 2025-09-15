@@ -32,7 +32,7 @@
         </nav>
         <div class="hero container max-w-[1130px] mx-auto flex justify-between items-center relative">
             <div class="flex flex-col gap-[50px] h-fit w-fit text-white z-10">
-                <p class="font-semibold text-2xl">I’m Shayna 👋</p>
+                <p class="font-semibold text-2xl">I’m Arya 👋</p>
                 <h1 class="font-extrabold text-[80px] leading-[90px]">Professional Designer & Dev</h1>
                 <button class="font-bold text-[26px] leading-[39px] rounded-[30px] p-[30px_40px] bg-portto-purple w-fit transition-all duration-300 hover:shadow-[0_10px_20px_0_#4920E5]">Explore Now</button>
             </div>
